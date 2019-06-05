@@ -1,0 +1,9 @@
+<launch>
+ <arg name="map_file" default="/home/yuanrupeng/Ymapping.yaml"/> 
+ <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen"/>
+ <node name="bmcl" pkg="bmcl"  type="bmcl" output="screen">
+  <param name = "threshold_x" value="0.2"/>
+  <param name = "threshold_y" value="0.2"/>
+  <param name = "threshold_th" value="0.01"/>
+ </node>
+</launch>
